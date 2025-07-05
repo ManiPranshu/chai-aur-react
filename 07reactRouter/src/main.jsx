@@ -38,10 +38,12 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='user/:userid' element={<User />} />
+
+{/* this is the optimized way to fetch data from an API, useeffect fetch data when components mount, but in this case we are using loader to fetch data before the component mounts, for example, useeffect fetch data when we click on the button in ui, but this start fetching data just after hover. */}
       <Route 
-      loader={githubInfoLoader}
+      loader={githubInfoLoader}  
       path='github' 
-      element={<Github />}
+      element={<Github />} 
        />
     </Route>
   )
